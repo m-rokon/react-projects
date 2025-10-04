@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import "./index.css";
+
 const Booklist = () => {
 	return (
-		<section>
+		<section className="booklist">
 			<Book />
 			<Book />
 			<Book />
@@ -13,28 +15,34 @@ const Booklist = () => {
 
 const Book = () => {
 	return (
-		<article>
+		<article className="book">
 			<Image />
 			<Title />
-			<Description />
+			<Author />
 		</article>
 	);
 };
 
 const Image = () => {
-	return <h2>this will replaced by image container</h2>;
+	return (
+		<img
+			src="https://m.media-amazon.com/images/I/91ZVf3kNrcL._SY466_.jpg"
+			alt="The Let Them Theory"
+		/>
+	);
 };
 
 const Title = () => {
-	return <h2>Book title</h2>;
+	return (
+		<h2>
+			The Let Them Theory: A Life-Changing Tool That Millions of People Can't
+			Stop Talking About
+		</h2>
+	);
 };
 
-const Description = () => {
-	return (
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, eveniet?
-		</p>
-	);
+const Author = () => {
+	return <h4>Mel Robbins</h4>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
