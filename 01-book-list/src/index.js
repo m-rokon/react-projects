@@ -3,28 +3,26 @@ import ReactDOM from "react-dom/client";
 
 import "./index.css";
 
+const title =
+	"The Let Them Theory: A Life-Changing Tool That Millions of People Can't Stop Talking About";
+const author = "Mel Robbins";
+const img = "./images/book-1.jpg";
+
 const Booklist = () => {
 	return (
 		<section className="booklist">
-			<Book />
-			<Book />
-			<Book />
+			<Book title={title} author={author} img={img} />
+			<Book title={title} author={author} img={img} />
 		</section>
 	);
 };
 
-const Book = () => {
-	const title =
-		"The Let Them Theory: A Life-Changing Tool That Millions of People Can't Stop Talking About";
-	const author = "Mel Robbins";
+const Book = (props) => {
 	return (
 		<article className="book">
-			<img
-				src="https://m.media-amazon.com/images/I/91ZVf3kNrcL._SY466_.jpg"
-				alt="The Let Them Theory"
-			/>
-			<h2>{title}</h2>
-			<h4>{author}</h4>
+			<img src={props.img} alt={props.title} />
+			<h2>{props.title}</h2>
+			<h4>{props.author}</h4>
 		</article>
 	);
 };
