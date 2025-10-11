@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import ReactDOM from "react-dom/client";
 
 import "./index.css";
@@ -23,7 +23,14 @@ const Booklist = () => {
 				title={firstBook.title}
 				author={firstBook.author}
 				img={firstBook.img}
-			/>
+			>
+				{/* children props */}
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum officia
+					ut consectetur! Amet deserunt pariatur aliquam at illum vel sit.
+				</p>
+				<button>Click Me!</button>
+			</Book>
 			<Book
 				title={secondBook.title}
 				author={secondBook.author}
@@ -35,12 +42,13 @@ const Booklist = () => {
 
 // destructuring props
 
-const Book = ({ author, title, img }) => {
+const Book = ({ author, title, img, children }) => {
 	return (
 		<article className="book">
 			<img src={img} alt={title} />
 			<h2>{title}</h2>
 			<h4>{author}</h4>
+			{children}
 		</article>
 	);
 };
