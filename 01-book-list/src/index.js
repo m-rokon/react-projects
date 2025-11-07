@@ -24,14 +24,14 @@ const books = [
 // prop drilling
 
 const Booklist = () => {
-	const someValue = "example value";
-	const displayValue = () => {
-		console.log(someValue);
+	const getBook = (id) => {
+		const book = books.find((book) => book.id === id);
+		console.log(book);
 	};
 	return (
 		<section className="booklist">
 			{books.map((book) => {
-				return <Book {...book} key={book.id} displayValue={displayValue} />;
+				return <Book {...book} key={book.id} displayBook={getBook} />;
 			})}
 		</section>
 	);
@@ -40,13 +40,14 @@ const Booklist = () => {
 // destructuring props
 
 const Book = (props) => {
-	const { author, title, img, displayValue } = props;
+	const { author, title, img, id, displayBook } = props;
+	// console.log(displayBook);
 	return (
 		<article className="book">
 			<img src={img} alt={title} />
 			<h2>{title}</h2>
 			<h4>{author}</h4>
-			<button className="btn" onClick={displayValue}>
+			<button className="btn" onClick={displayBook(id)}>
 				click me
 			</button>
 		</article>
