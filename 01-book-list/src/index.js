@@ -21,45 +21,18 @@ const books = [
 	},
 ];
 
+// prop drilling
+
 const Booklist = () => {
+	const someValue = "example value";
+	const displayValue = () => {
+		console.log(someValue);
+	};
 	return (
 		<section className="booklist">
-			<ExampleEvent />
 			{books.map((book) => {
-				return <Book {...book} key={book.id} />;
+				return <Book {...book} key={book.id} displayValue={displayValue} />;
 			})}
-		</section>
-	);
-};
-
-// basic events
-
-const handleFormInput = (e) => {
-	// console.log(e);
-	console.log(e.target.name);
-};
-
-const handleFormSubmission = () => {
-	console.log("form submitted.");
-};
-const handleButtonClick = (e) => {
-	e.preventDefault();
-	console.log("form button clicked");
-};
-
-const ExampleEvent = () => {
-	return (
-		<section>
-			<form onSubmit={handleFormSubmission}>
-				<h2>Typical form</h2>
-				<input
-					type="text"
-					name="example"
-					style={{ margin: "1rem 0", display: "block" }}
-					onChange={handleFormInput}
-				/>
-				<button onClick={handleButtonClick}>Click me</button>
-			</form>
 		</section>
 	);
 };
@@ -67,12 +40,15 @@ const ExampleEvent = () => {
 // destructuring props
 
 const Book = (props) => {
-	const { author, title, img } = props;
+	const { author, title, img, displayValue } = props;
 	return (
 		<article className="book">
 			<img src={img} alt={title} />
 			<h2>{title}</h2>
 			<h4>{author}</h4>
+			<button className="btn" onClick={displayValue}>
+				click me
+			</button>
 		</article>
 	);
 };
