@@ -17,22 +17,38 @@ body {
 	margin: 5rem auto;
 	display: grid;
 	gap: 2rem;
+	justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
 	.booklist {
 		grid-template-columns: repeat(3, 1fr);
 	}
+	.book {
+		width: 100%;
+	}
 }
-
 .book {
 	background: #fff;
 	border-radius: 1rem;
 	padding: 2rem;
+	width: 300px;
+	position: relative;
 }
 .book img {
 	width: 100%;
 	object-fit: cover;
+}
+
+.number {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #ff4000;
+	color: #fff;
+	padding: 0.2rem 1rem;
+	border-top-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
 }
 
 .book h2 {
