@@ -6,12 +6,13 @@ import { books } from "./books";
 import Book from "./Book";
 
 // ES6 - Modules (React components)
+// Numbers challenge
 
 const Booklist = () => {
 	return (
 		<section className="booklist">
-			{books.map((book) => {
-				return <Book {...book} key={book.id} />;
+			{books.map((book, index) => {
+				return <Book {...book} key={book.id} numbers={index} />;
 			})}
 		</section>
 	);
