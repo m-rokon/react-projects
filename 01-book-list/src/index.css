@@ -11,6 +11,12 @@ body {
 	color: #222;
 }
 
+.page-title {
+	text-align: center;
+	padding-top: 5rem;
+	font-size: 1.8rem;
+}
+
 .booklist {
 	width: 90vw;
 	max-width: 1170px;

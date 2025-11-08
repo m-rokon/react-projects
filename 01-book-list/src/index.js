@@ -10,11 +10,14 @@ import Book from "./Book";
 
 const Booklist = () => {
 	return (
-		<section className="booklist">
-			{books.map((book, index) => {
-				return <Book {...book} key={book.id} numbers={index} />;
-			})}
-		</section>
+		<>
+			<h2 className="page-title">Amazon Best Sellers Booklist</h2>
+			<section className="booklist">
+				{books.map((book, index) => {
+					return <Book {...book} key={book.id} numbers={index} />;
+				})}
+			</section>
+		</>
 	);
 };
 
