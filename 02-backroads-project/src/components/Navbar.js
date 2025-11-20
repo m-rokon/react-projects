@@ -30,7 +30,12 @@ const Navbar = () => {
 						const { id, href, text } = socialNetworks;
 						return (
 							<li key={id}>
-								<a href={href} target="_blank" className="nav-icon">
+								<a
+									href={href}
+									target="_blank"
+									rel="noreferrer"
+									className="nav-icon"
+								>
 									<i className={`fab fa-${text}`}></i>
 								</a>
 							</li>
