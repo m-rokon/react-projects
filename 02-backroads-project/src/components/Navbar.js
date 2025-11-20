@@ -16,8 +16,8 @@ const Navbar = () => {
 					{pageLinks.map((page) => {
 						const { id, href, text } = page;
 						return (
-							<li>
-								<a href={href} key={id} className="nav-link">
+							<li key={id}>
+								<a href={href} className="nav-link">
 									{text}
 								</a>{" "}
 							</li>
@@ -29,8 +29,8 @@ const Navbar = () => {
 					{socialLinks.map((socialNetworks) => {
 						const { id, href, text } = socialNetworks;
 						return (
-							<li>
-								<a href={href} key={id} target="_blank" className="nav-icon">
+							<li key={id}>
+								<a href={href} target="_blank" className="nav-icon">
 									<i className={`fab fa-${text}`}></i>
 								</a>
 							</li>
