@@ -30,17 +30,17 @@ export const socialLinks = [
 	{
 		id: 1,
 		href: "https://facebook.com/",
-		text: "facebook",
+		icon: "fab fa-facebook",
 	},
 	{
-		id: 1,
+		id: 2,
 		href: "https://x.com/",
-		text: "twitter",
+		icon: "fab fa-twitter",
 	},
 	{
-		id: 1,
+		id: 3,
 		href: "https://instagram.com/",
-		text: "instagram",
+		icon: "fab fa-instagram",
 	},
 ];
 

@@ -19,7 +19,7 @@ const Navbar = () => {
 							<li key={id}>
 								<a href={href} className="nav-link">
 									{text}
-								</a>{" "}
+								</a>
 							</li>
 						);
 					})}
@@ -27,7 +27,7 @@ const Navbar = () => {
 
 				<ul className="nav-icons">
 					{socialLinks.map((socialNetworks) => {
-						const { id, href, text } = socialNetworks;
+						const { id, href, icon } = socialNetworks;
 						return (
 							<li key={id}>
 								<a
@@ -36,7 +36,7 @@ const Navbar = () => {
 									rel="noreferrer"
 									className="nav-icon"
 								>
-									<i className={`fab fa-${text}`}></i>
+									<i className={icon}></i>
 								</a>
 							</li>
 						);
