@@ -1,58 +1,41 @@
+import { pageLinks, socialLinks } from "../data";
 import logo from "../images/logo.svg";
 
 const Navbar = () => {
 	return (
-		<nav class="navbar">
-			<div class="nav-center">
-				<div class="nav-header">
-					<img src={logo} class="nav-logo" alt="backroads" />
-					<button type="button" class="nav-toggle" id="nav-toggle">
-						<i class="fas fa-bars"></i>
+		<nav className="navbar">
+			<div className="nav-center">
+				<div className="nav-header">
+					<img src={logo} className="nav-logo" alt="backroads" />
+					<button type="button" className="nav-toggle" id="nav-toggle">
+						<i className="fas fa-bars"></i>
 					</button>
 				</div>
 				{/* <!-- left this comment on purpose --> */}
-				<ul class="nav-links" id="nav-links">
-					<li>
-						<a href="#home" class="nav-link">
-							home
-						</a>
-					</li>
-
-					<li>
-						<a href="#about" class="nav-link">
-							about
-						</a>
-					</li>
-
-					<li>
-						<a href="#services" class="nav-link">
-							services
-						</a>
-					</li>
-
-					<li>
-						<a href="#tours" class="nav-link">
-							tours
-						</a>
-					</li>
+				<ul className="nav-links" id="nav-links">
+					{pageLinks.map((page) => {
+						const { id, href, text } = page;
+						return (
+							<li>
+								<a href={href} key={id} className="nav-link">
+									{text}
+								</a>{" "}
+							</li>
+						);
+					})}
 				</ul>
 
-				<ul class="nav-icons">
-					<li>
-						<a href="https://www.twitter.com" target="_blank" class="nav-icon">
-							<i class="fab fa-facebook"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.twitter.com" target="_blank" class="nav-icon">
-							<i class="fab fa-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.twitter.com" target="_blank" class="nav-icon">
-							<i class="fab fa-squarespace"></i>
-						</a>
-					</li>
+				<ul className="nav-icons">
+					{socialLinks.map((socialNetworks) => {
+						const { id, href, text } = socialNetworks;
+						return (
+							<li>
+								<a href={href} key={id} target="_blank" className="nav-icon">
+									<i className={`fab fa-${text}`}></i>
+								</a>
+							</li>
+						);
+					})}
 				</ul>
 			</div>
 		</nav>
