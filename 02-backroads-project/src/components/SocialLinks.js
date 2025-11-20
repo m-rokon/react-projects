@@ -1,21 +1,16 @@
 import { socialLinks } from "../data";
+import SocialLink from "./SocialLink";
 
 const SocialLinks = ({ parentClass, itemClass }) => {
 	return (
 		<ul className={parentClass}>
 			{socialLinks.map((socialNetworks) => {
-				const { id, href, icon } = socialNetworks;
 				return (
-					<li key={id}>
-						<a
-							href={href}
-							target="_blank"
-							rel="noreferrer"
-							className={itemClass}
-						>
-							<i className={icon}></i>
-						</a>
-					</li>
+					<SocialLink
+						key={socialNetworks.id}
+						itemClass={itemClass}
+						socialNetworks={socialNetworks}
+					/>
 				);
 			})}
 		</ul>
