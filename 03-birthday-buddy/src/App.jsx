@@ -1,5 +1,6 @@
 import { useState } from "react";
 import data from "./data";
+import PersonLists from "./components/PersonLists";
 
 const App = () => {
 	const [birthdayBuddy, setBirthdayBuddy] = useState(data);
@@ -14,20 +15,7 @@ const App = () => {
 				<h3>
 					{birthdayBuddy.length ? birthdayBuddy.length : "No"} Birthdays Today
 				</h3>
-				{birthdayBuddy.map((people) => {
-					const { id, name, age, image } = people;
-					return (
-						<article key={id} className="person">
-							<div>
-								<img className="img" src={image} alt={name} />
-							</div>
-							<div>
-								<h4>{name}</h4>
-								<p>{age}</p>
-							</div>
-						</article>
-					);
-				})}
+				<PersonLists bBuddies={birthdayBuddy} />
 				<button
 					className="btn btn-block"
 					type="button"
