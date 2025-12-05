@@ -3,25 +3,40 @@ import data from "./data";
 
 const App = () => {
 	const [birthdayBuddy, setBirthdayBuddy] = useState(data);
+
+	const handleClearAll = () => {
+		setBirthdayBuddy([]);
+	};
+
 	return (
-		<section>
-			<article>
+		<main>
+			<section className="container">
+				<h3>
+					{birthdayBuddy.length ? birthdayBuddy.length : "No"} Birthdays Today
+				</h3>
 				{birthdayBuddy.map((people) => {
 					const { id, name, age, image } = people;
 					return (
-						<div key={id}>
+						<article key={id} className="person">
 							<div>
-								<img src={image} alt={name} />
+								<img className="img" src={image} alt={name} />
 							</div>
 							<div>
 								<h4>{name}</h4>
 								<p>{age}</p>
 							</div>
-						</div>
+						</article>
 					);
 				})}
-			</article>
-		</section>
+				<button
+					className="btn btn-block"
+					type="button"
+					onClick={handleClearAll}
+				>
+					Clear all
+				</button>
+			</section>
+		</main>
 	);
 };
 export default App;
